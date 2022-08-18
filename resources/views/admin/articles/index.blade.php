@@ -6,7 +6,7 @@
     <div class="container index">
         {{-- tabella --}}
         <h1 class="my-4 mr-5">Tutti i tuoi articoli in vendita</h1>
-        <a class="btn btn-rounded-plus mb-3 ml-5" href="">
+        <a class="btn btn-rounded-plus mb-3 ml-5" href="{{ route('admin.articles.create') }}">
             {{-- btn-edit --}}
             Crea un nuovo articolo
             <i class="fa-solid fa-file-pen"></i>

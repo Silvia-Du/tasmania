@@ -22,6 +22,7 @@
         @csrf
         @method('PUT')
 
+        {{-- nome --}}
          <div class="mb-3">
           <label for="name" class="form-label">Nome articolo*</label>
           <input type="text"
@@ -34,6 +35,7 @@
           <p class="text-danger" id="error-name"></p>
         </div>
 
+        {{-- price --}}
          <div class="mb-3">
           <label for="price" class="form-label">Prezzo*</label>
           <input type="number"
@@ -46,6 +48,7 @@
           <p class="text-danger" id="error-price"></p>
         </div>
 
+        {{-- quantity --}}
          <div class="mb-3">
           <label for="quantity" class="form-label">Quantità*</label>
           <input type="number"
@@ -58,6 +61,7 @@
           <p class="text-danger" id="error-price"></p>
         </div>
 
+        {{-- description --}}
         <div class="mb-3">
             <label for="description"
             class="form-label "
@@ -69,6 +73,7 @@
             @enderror
           </div>
 
+          {{-- image --}}
           <div class="mb-3">
             @if($article->image)
                 <div class="image" >

@@ -28,7 +28,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.articles.create');
     }
 
     /**
@@ -39,7 +39,19 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        //
+       $data = $request->all();
+
+       if(array_key_exists('image', $data)){
+        $data['image_original_name'] = $request->file('image')->getClientOriginalName();
+        $data['image'] = Storage::put('uploads', $data['image']);
+        }
+
+        $new_article = new Article();
+        $data['slug'] = Article::slugGenerator($data['name']);
+        $new_article->fill($data);
+        $new_article->save();
+
+        return redirect()->route('admin.articles.show', $new_article);
     }
 
     /**
