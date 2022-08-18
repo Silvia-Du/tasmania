@@ -97,8 +97,10 @@ class ArticleController extends Controller
                 Storage::delete($article->image);
             }
 
+
             $data['image_original_name'] = $request->file('image')->getClientOriginalName();
             $data['image'] = Storage::put('uploads', $data['image']);
+            // @dd($data);
         }
 
         // modifico lo slug solo se ho cambiato il title
@@ -107,18 +109,6 @@ class ArticleController extends Controller
         }
 
         $article->update($data);
-
-        // se esiste l'array tags lo uso per sincronizzara i dati della tabella ponte
-        // se non esiste la chiave vuol dire che devo cancellare tutte le relazioni eventualmente presenti
-        // posso usare sync passando un array vuoto
-        //$article->tags()->sync([]);
-        // oppure detach non passando nulla
-
-        // if(array_key_exists('tags', $data)){
-        //     $article->tags()->sync($data['tags']);
-        // }else{
-        //     $article->tags()->detach();
-        // }
 
         return redirect()->route('admin.articles.show', $article);
     }
@@ -129,8 +119,10 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-        //
+        $article->delete();
+
+        return redirect()->route('admin.articles.index')->with('article_deleted', "Articolo $article->name eliminato correttamente");
     }
 }

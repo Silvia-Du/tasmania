@@ -3,7 +3,13 @@
 @section('content')
 
 
-    <div class="container index">
+
+<div class="container index">
+        @if (session('article_deleted'))
+            <div class="alert alert-danger" role="alert">
+                {{ session('article_deleted') }}
+            </div>
+        @endif
         {{-- tabella --}}
         <h1 class="my-4 mr-5">Tutti i tuoi articoli in vendita</h1>
         <a class="btn btn-rounded-plus mb-3 ml-5" href="{{ route('admin.articles.create') }}">
@@ -28,15 +34,6 @@
                         <td>{{ $article->name }}</td>
                         <td>{{ $article->price }},00</td>
                         <td>{{ $article->quantity }}</td>
-                        {{-- <td>{{ $article->category ? $article->category->name : '-'  }}</td>
-                        <td> --}}
-                            {{-- se presenti ciclo i tag altrimenti scrivo un segno - --}}
-                            {{-- @forelse ($article->tags as $tag)
-                                <span class="badge badge-success">{{$tag->name}}</span>
-                            @empty
-                                -
-                            @endforelse
-                        </td> --}}
                         <td>
                             <a class="btn btn-rounded" href="{{ route('admin.articles.show', $article) }}">
                                 {{-- btn show --}}
@@ -46,9 +43,11 @@
                                 {{-- btn-edit --}}
                                 <i class="fa-solid fa-highlighter"></i>
                             </a>
+                            {{-- btn delete --}}
                             <form
-                            onsubmit="return confirm('Confermi l\'eliminazione del post: {{$article->name}}?')"
-                            class="d-inline" action="" method="POST">
+                            onsubmit="return confirm('Confermi l\'eliminazione dell\'articolo: {{$article->name}}?')"
+
+                            class="d-inline" action="{{ route('admin.articles.destroy', $article) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-rounded" ><i class="fa-solid fa-dumpster"></i></button>

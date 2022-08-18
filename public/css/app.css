@@ -10972,6 +10972,14 @@ a.text-dark:focus {
   display: inline-block;
 }
 
+.show .article-img {
+  border: 1px solid gray;
+}
+
+.show .article-img img {
+  width: 500px;
+}
+
 .debug {
   background-color: lightblue;
 }

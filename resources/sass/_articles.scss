@@ -4,3 +4,13 @@
         display: inline-block;
     }
 }
+
+.show{
+
+    .article-img{
+        border: 1px solid gray;
+        img{
+            width: 500px;
+        }
+    }
+}

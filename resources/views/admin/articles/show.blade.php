@@ -2,19 +2,19 @@
 
 @section('content')
 
-<div class="container">
+<div class="container show">
     <h1 class="my-5">Post:{{ $article->name }}</h1>
     <h3 class="my-5">Ultima modifica: {{ $article->updated_at }}</h3>
 
-    <div class="row">
-        <div class="col-6 post debug">
+    <div class="row row-img">
+        <div class="col-6 article-img p-3 d-flex justify-content-center">
             @if($article->image)
                 <div class="image" >
-                    <img width="500" src="{{ asset('storage/' . $article->image ) }}" alt="{{ $article->image_original_name }}">
-                    <div><i>{{$article->image_original_name }}</i></div>
+                    <img src="{{ asset('storage/' . $article->image ) }}" alt="{{ $article->image_original_name }}">
+                    {{-- <div><i>{{$article->image_original_name }}</i></div> --}}
                 </div>
-            @endif
-        </div>
+                @endif
+            </div>
         <div class="col-6">
             <p>#ID {{ $article->id }}</p>
             <h3>Articolo:{{ $article->name }}</h3>
