@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Article;
+use App\Category;
 use App\http\Requests\ArticleRequest;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,6 +18,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
+
         $articles = Article::orderBy('id', 'desc')->paginate(8);
         return view('admin.articles.index', compact('articles'));
     }
@@ -28,7 +30,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.articles.create');
+        $categories = Category::all();
+        return view('admin.articles.create', compact('categories'));
     }
 
     /**
@@ -74,8 +77,9 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
+        $categories = Category::all();
 
-        return view('admin.articles.edit', compact('article'));
+        return view('admin.articles.edit', compact('article', 'categories'));
     }
 
     /**

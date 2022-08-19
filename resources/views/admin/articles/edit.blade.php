@@ -77,6 +77,21 @@
             @enderror
           </div>
 
+          {{-- category --}}
+
+          <div class="mb-3">
+            <select class="form-select" name="category_id" >
+                <option value="">Seleziona una categoria</option>
+                @foreach ($categories as $category)
+                 <option
+                    @if($category->id == old('category_id', $article->category ? $article->category->id : ''))
+                        selected
+                    @endif
+                    value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+              </select>
+          </div>
+
           {{-- image --}}
           <div class="mb-3">
             @if($article->image)

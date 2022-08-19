@@ -35,6 +35,7 @@ class Article extends Model
             'description',
             'image',
             'image_original_name',
-            'quantity'
+            'quantity',
+            'category_id'
    ];
 }

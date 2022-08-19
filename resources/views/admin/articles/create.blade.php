@@ -73,6 +73,16 @@
             @enderror
         </div>
 
+        {{-- category --}}
+        <div class="mb-3">
+            <select class="form-select p-2 rounded-lg" name="category_id" >
+                <option value="">Seleziona una categoria</option>
+                @foreach ($categories as $category)
+                 <option @if($category->id == old('category_id')) selected @endif value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+        </div>
+
         {{-- image --}}
         <div class="mb-3">
             <label for="image" class="form-label">Immagine</label>

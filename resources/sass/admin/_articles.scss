@@ -1,3 +1,7 @@
+
+
+//General
+
 .debug{
     background-color: lightblue;
 }
@@ -12,4 +16,21 @@
     padding: 10px 15px;
     background-color: rgb(167, 209, 199);
     color: rgb(34, 34, 34);
+}
+
+//articles pages
+.index{
+    h1{
+        display: inline-block;
+    }
+}
+
+.show{
+
+    .article-img{
+        border: 1px solid gray;
+        img{
+            width: 500px;
+        }
+    }
 }

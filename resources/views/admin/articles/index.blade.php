@@ -24,6 +24,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">prezzo</th>
                 <th scope="col">quantità</th>
+                <th scope="col">categoria</th>
                 <th scope="col">Azioni</th>
               </tr>
             </thead>
@@ -34,6 +35,8 @@
                         <td>{{ $article->name }}</td>
                         <td>{{ $article->price }},00</td>
                         <td>{{ $article->quantity }}</td>
+                        <td>{{ $article->category? $article->category->name : '-' }}</td>
+
                         <td>
                             <a class="btn btn-rounded" href="{{ route('admin.articles.show', $article) }}">
                                 {{-- btn show --}}

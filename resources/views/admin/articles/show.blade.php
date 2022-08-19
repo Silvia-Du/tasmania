@@ -16,16 +16,18 @@
                 @endif
             </div>
         <div class="col-6">
-            <p>#ID {{ $article->id }}</p>
+            <h5 class="mb-4">#ID {{ $article->id }}</h5>
             <h3>Articolo:{{ $article->name }}</h3>
-            <p>Prezzo:{{ $article->price }},00</p>
+            <h5>Prezo:</h5>
+            <p>{{ $article->price }},00</p>
 
             @if ($article->category)
-                <p>Categoria: {{ $article->category->name }}</p>
+                <h5>Categoria:</h5>
+                <p>{{ $article->category->name }}</p>
             @endif
 
             @if($article->tags)
-                <h4>I tag assegnati a questo post:</h4>
+                <h5>I tag assegnati a questo post:</h5>
                 <div class="mb-4">
                     @foreach ($article->tags as $tag)
                         <h4 class="d-inline mb-4"><span class="badge badge-success">{{ $tag->name }}</span></h4>
