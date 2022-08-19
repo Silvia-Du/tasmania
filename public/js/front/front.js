@@ -2044,48 +2044,60 @@ var staticRenderFns = [function () {
   })]), _vm._v(" "), _c("div", {
     staticClass: "col-4 col-md-6 debug pr-md-5 justify-content-end d-flex"
   }, [_c("ul", {
-    staticClass: "d-flex debug"
-  }, [_c("li", [_c("a", {
+    staticClass: "d-flex align-items-center debug mb-0"
+  }, [_c("li", {
+    staticClass: "d-none d-md-block"
+  }, [_c("a", {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Stores")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Stores")])]), _vm._v(" "), _c("li", {
+    staticClass: "d-none d-md-block"
+  }, [_c("a", {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Events")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Events")])]), _vm._v(" "), _c("li", {
+    staticClass: "d-none d-md-block"
+  }, [_c("a", {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("About")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("About")])]), _vm._v(" "), _c("li", {
+    staticClass: "d-none d-md-block mr-4"
+  }, [_c("a", {
     attrs: {
       href: "#"
     }
-  }, [_vm._v("Blog")])]), _vm._v(" "), _c("li", [_c("a", {
+  }, [_vm._v("Blog")])])]), _vm._v(" "), _c("div", {
+    staticClass: "icon-box d-flex align-items-center"
+  }, [_c("a", {
+    staticClass: "d-none d-md-block",
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-magnifying-glass"
-  })])]), _vm._v(" "), _c("li", [_c("a", {
+  })]), _vm._v(" "), _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-cart-shopping"
-  })])]), _vm._v(" "), _c("li", [_c("a", {
+  })]), _vm._v(" "), _c("a", {
+    staticClass: "d-none d-md-block",
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-heart"
-  })])]), _vm._v(" "), _c("li", [_c("a", {
+  })]), _vm._v(" "), _c("a", {
     attrs: {
       href: "#"
     }
   }, [_c("i", {
     staticClass: "fa-solid fa-user"
-  })])])])])]), _vm._v(" "), _c("div", {
+  })])])])]), _vm._v(" "), _c("div", {
     staticClass: "row bottom debug"
   })])]);
 }];
@@ -2106,7 +2118,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".col-md-6 img[data-v-494e1ffe] {\n  width: 190px;\n}\nli[data-v-494e1ffe] {\n  list-style: none;\n  margin-right: 10px;\n}\nli a[data-v-494e1ffe] {\n  color: black;\n  text-transform: uppercase;\n}", ""]);
+exports.push([module.i, "header[data-v-494e1ffe] {\n  border-bottom: 1px solid gold;\n}\nheader .col-md-6 img[data-v-494e1ffe] {\n  width: 190px;\n}\nheader li[data-v-494e1ffe] {\n  list-style: none;\n}\nheader li a[data-v-494e1ffe] {\n  color: black;\n  text-transform: uppercase;\n  margin-right: 35px;\n  font-size: 0.9rem;\n}\nheader .icon-box a[data-v-494e1ffe] {\n  color: black;\n  text-transform: uppercase;\n  margin-left: 15px;\n  font-size: 0.85rem;\n}", ""]);
 
 // exports
 
