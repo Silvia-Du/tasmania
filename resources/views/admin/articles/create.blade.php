@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="container">
-    <h1 class="my-5">Aggiungi un nuovo articolo</h1>
+    <h1 class="my-5 d-inline mr-5">Aggiungi un nuovo articolo</h1>
+
+    <a type="button" class="btn btn-rounded-plus mb-3 ml-5" href="{{ route('admin.articles.index') }}">Back to list
+        <i class="fa-solid fa-list"></i>
+    </a>
 
     {{-- elenco di tutti gli errori eventuali --}}
     @if ($errors->any())

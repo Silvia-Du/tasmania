@@ -4,7 +4,11 @@
 
 
 <div class="container">
-    <h1>Modifica di: {{ $article->name }}</h1>
+    <h1 class="d-inline mr-5">Modifica di: {{ $article->name }}</h1>
+
+    <a type="button" class="btn btn-rounded-plus mb-3 ml-5" href="{{ route('admin.articles.index') }}">Back to list
+        <i class="fa-solid fa-list"></i>
+    </a>
 
     @if ($errors->any())
     <div class="alert alert-danger" role="alert">
@@ -96,6 +100,7 @@
             <i class="fa-solid fa-floppy-disk"></i>
         </button>
     </form>
+
 
 
 </div>
