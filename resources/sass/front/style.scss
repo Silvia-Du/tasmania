@@ -1,9 +1,14 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~@fontsource/montserrat/index.css';
+@import '~@fontsource/montserrat/500.css';
+@import '~@fontsource/montserrat/800.css';
 
 .debug{
     background-color: lightblue;
     border: 1px solid black;
 }
+
+body { font-family: "Montserrat", sans-serif; }
 
 

@@ -1,7 +1,11 @@
 <template>
   <div>
     <HeaderComp />
-    <h1>Home</h1>
+    <main>
+        <!-- qui si innestano tutte le pagine -->
+        <router-view></router-view>
+
+    </main>
     <FooterComp />
   </div>
 </template>
